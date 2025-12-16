@@ -21,56 +21,56 @@ management_groups:
     exists: false
     parent_id: agileadvant_alz
 
-  - id: corp
+  - id: agileadvant_corp
     display_name: Corp
     archetypes:
       - corp_custom
     exists: false
     parent_id: agileadvant_landingzones
 
-  - id: online
+  - id: agileadvant_online
     display_name: Online
     archetypes:
       - online_custom
     exists: false
     parent_id: agileadvant_landingzones
 
-  - id: sandbox
+  - id: agileadvant_sandbox
     display_name: Sandbox
     archetypes:
       - sandbox_custom
     exists: false
     parent_id: agileadvant_alz
 
-  - id: security
+  - id: agileadvant_security
     display_name: Security
     archetypes:
       - security_custom
     exists: false
     parent_id: agileadvant_platform
 
-  - id: management
+  - id: agileadvant_management
     display_name: Management
     archetypes:
       - management_custom
     exists: false
     parent_id: agileadvant_platform
 
-  - id: connectivity
+  - id: agileadvant_connectivity
     display_name: Connectivity
     archetypes:
       - connectivity_custom
     exists: false
     parent_id: agileadvant_platform
 
-  - id: identity
+  - id: agileadvant_identity
     display_name: Identity
     archetypes:
       - identity_custom
     exists: false
     parent_id: agileadvant_platform
 
-  - id: decommissioned
+  - id: agileadvant_decommissioned
     display_name: Decommissioned
     archetypes:
       - decommissioned_custom
