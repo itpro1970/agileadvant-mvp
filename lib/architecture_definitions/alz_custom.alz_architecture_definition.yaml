@@ -54,7 +54,7 @@ management_groups:
     archetypes:
       - management_custom
     exists: false
-    parent_id: platform
+    parent_id: agileadvant_platform
 
   - id: connectivity
     display_name: Connectivity
