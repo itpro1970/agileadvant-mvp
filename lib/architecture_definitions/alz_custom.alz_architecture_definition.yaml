@@ -1,53 +1,53 @@
 name: alz_custom
 management_groups:
-  - id: alz
+  - id: agileadvant_alz
     display_name: Azure Landing Zones
     archetypes:
       - root_custom
     exists: false
     parent_id: null
 
-  - id: platform
+  - id: agileadvant_platform
     display_name: Platform
     archetypes:
       - platform_custom
     exists: false
-    parent_id: alz
+    parent_id: agileadvant_alz
 
-  - id: landingzones
+  - id: agileadvant_landingzones
     display_name: Landing Zones
     archetypes:
       - landing_zones_custom
     exists: false
-    parent_id: alz
+    parent_id: agileadvant_alz
 
   - id: corp
     display_name: Corp
     archetypes:
       - corp_custom
     exists: false
-    parent_id: landingzones
+    parent_id: agileadvant_landingzones
 
   - id: online
     display_name: Online
     archetypes:
       - online_custom
     exists: false
-    parent_id: landingzones
+    parent_id: agileadvant_landingzones
 
   - id: sandbox
     display_name: Sandbox
     archetypes:
       - sandbox_custom
     exists: false
-    parent_id: alz
+    parent_id: agileadvant_alz
 
   - id: security
     display_name: Security
     archetypes:
       - security_custom
     exists: false
-    parent_id: platform
+    parent_id: agileadvant_platform
 
   - id: management
     display_name: Management
@@ -61,18 +61,18 @@ management_groups:
     archetypes:
       - connectivity_custom
     exists: false
-    parent_id: platform
+    parent_id: agileadvant_platform
 
   - id: identity
     display_name: Identity
     archetypes:
       - identity_custom
     exists: false
-    parent_id: platform
+    parent_id: agileadvant_platform
 
   - id: decommissioned
     display_name: Decommissioned
     archetypes:
       - decommissioned_custom
     exists: false
-    parent_id: alz
+    parent_id: agileadvant_alz
