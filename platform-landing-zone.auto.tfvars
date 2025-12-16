@@ -61,7 +61,7 @@ custom_replacements = {
     primary_virtual_network_gateway_express_route_hobo_public_ip_enabled = true
     primary_virtual_network_gateway_vpn_enabled                          = true
     primary_private_dns_zones_enabled                                    = true
-    primary_private_dns_auto_registration_zone_enabled                   = true
+    primary_private_dns_auto_registration_zone_enabled                   = false
     primary_private_dns_resolver_enabled                                 = true
     primary_bastion_enabled                                              = true
 
