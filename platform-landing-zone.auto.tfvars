@@ -52,7 +52,7 @@ custom_replacements = {
     dcr_vm_insights_name                    = "dcr-vm-insights"
 
     # Resource provisioning global connectivity
-    ddos_protection_plan_enabled = false
+    ddos_protection_plan_enabled = true
 
     # Resource provisioning primary connectivity
     primary_firewall_enabled                                             = true
@@ -89,6 +89,7 @@ custom_replacements = {
     primary_virtual_network_gateway_vpn_name                     = "vgw-hub-vpn-$${starter_location_01}"
     primary_virtual_network_gateway_vpn_public_ip_name_1         = "pip-vgw-hub-vpn-$${starter_location_01}-001"
     primary_virtual_network_gateway_vpn_public_ip_name_2         = "pip-vgw-hub-vpn-$${starter_location_01}-002"
+    primary_virtual_network_gateway_vpn_public_ip_name_p2s       = "pip-vgw-hub-vpn-$${starter_location_01}-p2s"
     primary_private_dns_resolver_name                            = "pdr-hub-dns-$${starter_location_01}"
     primary_bastion_host_name                                    = "bas-hub-$${starter_location_01}"
     primary_bastion_host_public_ip_name                          = "pip-bastion-hub-$${starter_location_01}"
@@ -410,6 +411,20 @@ hub_virtual_networks = {
               name = "$${primary_virtual_network_gateway_vpn_public_ip_name_2}"
             }
           }
+          p2s_ip_configuration = {
+            # name = "vnetGatewayConfigp2s_ip_configuration"  # For backwards compatibility with previous naming, uncomment this line
+            public_ip = {
+              name = "$${primary_virtual_network_gateway_vpn_public_ip_name_p2s}"
+            }
+          }
+        }
+        vpn_point_to_site = {
+          address_space        = ["10.10.0.128/27"]
+          vpn_auth_types       = ["AAD"]
+          aad_audience         = "41b23e61-6c1e-4545-b367-cd054e0ed4b4"
+          aad_issuer           = "https://sts.windows.net/25b1f34f-8e86-48bd-a1c5-6953081e059a/"
+          aad_tenant           = "https://login.microsoftonline.com/25b1f34f-8e86-48bd-a1c5-6953081e059a/"
+          vpn_client_protocols = ["IkeV2", "OpenVPN"]
         }
       }
     }
