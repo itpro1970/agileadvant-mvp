@@ -55,11 +55,12 @@ custom_replacements = {
     ddos_protection_plan_enabled = true
 
     # Resource provisioning primary connectivity
-    primary_firewall_enabled                                             = true
-    primary_firewall_management_ip_enabled                               = true
-    primary_virtual_network_gateway_express_route_enabled                = true
-    primary_virtual_network_gateway_express_route_hobo_public_ip_enabled = true
+    primary_firewall_enabled                                             = false
+    primary_firewall_management_ip_enabled                               = false
+    primary_virtual_network_gateway_express_route_enabled                = false
+    primary_virtual_network_gateway_express_route_hobo_public_ip_enabled = false
     primary_virtual_network_gateway_vpn_enabled                          = true
+    p2s_vpn_enabled                                                      = true
     primary_private_dns_zones_enabled                                    = true
     primary_private_dns_auto_registration_zone_enabled                   = false
     primary_private_dns_resolver_enabled                                 = true
@@ -411,20 +412,6 @@ hub_virtual_networks = {
               name = "$${primary_virtual_network_gateway_vpn_public_ip_name_2}"
             }
           }
-          p2s_ip_configuration = {
-            # name = "vnetGatewayConfigp2s_ip_configuration"  # For backwards compatibility with previous naming, uncomment this line
-            public_ip = {
-              name = "$${primary_virtual_network_gateway_vpn_public_ip_name_p2s}"
-            }
-          }
-        }
-        vpn_point_to_site = {
-          address_space        = ["10.10.0.128/27"]
-          vpn_auth_types       = ["AAD"]
-          aad_audience         = "41b23e61-6c1e-4545-b367-cd054e0ed4b4"
-          aad_issuer           = "https://sts.windows.net/25b1f34f-8e86-48bd-a1c5-6953081e059a/"
-          aad_tenant           = "https://login.microsoftonline.com/25b1f34f-8e86-48bd-a1c5-6953081e059a/"
-          vpn_client_protocols = ["IkeV2", "OpenVPN"]
         }
       }
     }
