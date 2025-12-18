@@ -382,6 +382,7 @@ hub_virtual_networks = {
     firewall_policy = {
       name = "$${primary_firewall_policy_name}"
       network_rule_collection = {
+        name = "Allow-Internet-Outbound"
         allow_internet_outbound = {
           priority = 100
           action   = "Allow"
