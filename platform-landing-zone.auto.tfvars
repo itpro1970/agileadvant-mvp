@@ -381,6 +381,20 @@ hub_virtual_networks = {
     }
     firewall_policy = {
       name = "$${primary_firewall_policy_name}"
+      network_rule_collection = {
+        allow_internet_outbound = {
+          priority = 100
+          action   = "Allow"
+          rules = [
+            {
+              name                  = "Allow-Internet-HTTP"
+              protocol              = "TCP"
+              source_addresses      = ["*"]
+              destination_addresses = ["*"]
+            }
+          ]
+        }
+      }
     }
     virtual_network_gateways = {
       subnet_address_prefix = "$${primary_gateway_subnet_address_prefix}"
